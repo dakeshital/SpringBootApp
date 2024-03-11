@@ -33,22 +33,21 @@ public class UserController {
 		return new ResponseEntity<>(createduser, HttpStatus.CREATED);
 	}
 
-    // http://localhost:8080/api/users/all
+    // http://localhost:8080/api/userdetails/all
 	@GetMapping("/all")
 	public List<User> getAllUsers() {
 		return service.getAllUsers();
 	}
 	
-    // http://localhost:8080/api/users/1
+    // http://localhost:8080/api/userdetails/1
 	@GetMapping("{id}")
 	public User getUserById(@PathVariable ("id") Long userid) {
 		User userId=service.getUserBId(userid);
 		return userId;
-		
 	}
 	
 	@PutMapping("{id}")
-    // http://localhost:8080/api/users/1
+    // http://localhost:8080/api/userdetailss/1
     public ResponseEntity<User> updateUser(@PathVariable("id") Long userId,
                                            @RequestBody User user){
         user.setId(userId);
