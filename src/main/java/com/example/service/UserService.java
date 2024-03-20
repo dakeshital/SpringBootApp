@@ -11,7 +11,7 @@ public interface UserService {
 
 	public List<User> getAllUsers();
 
-	public User getUserBId(Long id);
+	Optional<User> getUserById(Long id);
 
 	public User updateUser(User user);
 

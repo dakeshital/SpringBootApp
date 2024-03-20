@@ -29,11 +29,14 @@ public class UserServiceImpl implements UserService {
 		return userrepo.findAll();
 	}
 
-	@Override
-	public User getUserBId(Long id) {
-		Optional<User> user = userrepo.findById(id);
-		return user.get();
-	}
+//	@Override
+//	public User getUserById(Long id) {
+//		Optional<User> user = userrepo.findById(id);
+//		return user.get();
+//	}
+	public Optional<User> getUserById(Long id) {
+        return userrepo.findById(id);
+    }
 
 	@Override
 	public User updateUser(User user) {
